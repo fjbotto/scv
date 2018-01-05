@@ -1,0 +1,26 @@
+doctype
+html
+    head
+        title= title
+        include header.pug
+    body
+        div.container
+            h1= message
+            if(postedText)
+                Text Posted: #{postedText}
+
+            div(style="width:600px; height:100px; overflow:hidden; background-color:#eee;padding:10px; overflow-y: auto;") Text Analyzed: 
+                p #{textAnalyzed}
+
+            p number_of_words: #{number_of_words}
+            p number_of_different_words: #{number_of_different_words}
+            p number_of_letters: #{number_of_letters}
+            p number_of_symbols: #{number_of_symbols}
+            p
+            form(action="", method="post")
+                div.block
+                    textarea#textInput(name="textInput", cols="30", rows="10")
+                div.block
+                    input.btn.btn-primary(type="submit",name="Send")
+                p
+                p
